@@ -139,6 +139,12 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    document.title = lang === "en" 
+      ? "Dimitris Vatistas | Web Developer & Designer" 
+      : "Δημήτρης Βατίστας | Web Developer & Web Designer";
+  }, [lang]);
+
   const d = DATA[lang];
   
   // Format for Greece time (Europe/Athens)
