@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Framer Tokens */
+  --color-white: #ffffff;
+  --color-dark: #121212;
+  --color-dim: #7e7e7e;
+  --color-border-dim: #e8e8e8;
+  --color-pill-border: #e3e1e1;
+  --color-pill-bg: #fafafa;
+  --color-secondary-text: #8f8f8f;
+  --color-project-bg: #f5f5f5;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-dark antialiased selection:bg-dark selection:text-white;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .framer-section {
+    @apply w-full max-w-[640px] mx-auto border-x border-b border-dashed border-border-dim px-4 py-8 md:px-6 md:py-10;
+  }
+
+  .framer-header {
+    @apply w-full max-w-[640px] mx-auto border-x border-dashed border-border-dim px-4 md:px-6 sticky top-0 bg-white z-20;
+  }
+
+  .framer-mono-small {
+    @apply font-mono text-[12px] font-normal uppercase tracking-[0.04em] text-dim leading-[16px];
+  }
+
+  .framer-title {
+    @apply font-mono text-[14px] font-medium uppercase tracking-[-0.02em] text-dark mb-4 leading-[1.6em];
+  }
+
+  .framer-h1 {
+    @apply text-[28px] font-semibold tracking-[-0.05em] leading-[1.2em] text-dark;
+  }
+
+  .framer-h2 {
+    @apply text-[20px] font-normal tracking-[-0.02em] leading-[1.2em] text-dim;
+  }
+
+  .framer-body-text {
+    @apply text-[16px] font-normal leading-[1.6em] text-secondary-text tracking-[-0.01em];
+  }
+  
+  .framer-pill {
+    @apply inline-flex items-center px-[12px] py-[6px] border border-pill-border bg-pill-bg rounded-[4px] text-[16px] leading-[24px] text-secondary-text tracking-[-0.01em];
+  }
+}
